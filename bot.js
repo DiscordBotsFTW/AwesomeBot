@@ -767,7 +767,7 @@ var commands = {
         usage: "[<\"bug\" or \"suggestion\">]",
         process: function(bot, msg, suffix) {
             if(["bug", "suggestion", "feature", "issue"].indexOf(suffix.toLowerCase())>-1) {
-                bot.sendMessage(msg.channel, "Please file your " + suffix.toLowerCase() + " here: https://github.com/BitQuote/AwesomeBot/issues/new");
+                bot.sendMessage(msg.channel, "Please file your " + suffix.toLowerCase() + " here: https://github.com/DiscordBotsFTW/AwesomeBot/issues/new");
             } else {
                 bot.sendMessage(msg.channel, "Use `" + getPrefix(msg.channel.server) + "help` to list commands. Created by **@BitQuote**. Built on NodeJS with DiscordJS. Go to http://awesomebot.xyz/ to learn more, or join http://discord.awesomebot.xyz/\n\n*This project is in no way affiliated with Alphabet, Inc., who does not own or endorse this product.*");
             }
@@ -4673,7 +4673,7 @@ function postData() {
                 }
             });
         } else if(response.status==401) {
-            logMsg(Date.now(), "ERROR", "General", null, "Unauthorized AwesomeBot running, exiting. Please see https://github.com/BitQuote/AwesomeBot/wiki/Setup#getting-started");
+            logMsg(Date.now(), "ERROR", "General", null, "Unauthorized AwesomeBot running, exiting. Please see https://github.com/DiscordBotsFTW/AwesomeBot/wiki/Setup#getting-started");
             process.exit();
         }
     });
@@ -9007,10 +9007,10 @@ function getCommandHelp(svr, cmd) {
     var filled = false;
     if(commands[cmd] && !pubdisabled) {
         filled = true;
-        info += "**Help for public command `" + cmd + "`:**```" + getPrefix(svr) + cmd + (commands[cmd].usage ? (" " + commands[cmd].usage) : "") + "```\nhttps://github.com/BitQuote/AwesomeBot/wiki/Commands#" + cmd;
+        info += "**Help for public command `" + cmd + "`:**```" + getPrefix(svr) + cmd + (commands[cmd].usage ? (" " + commands[cmd].usage) : "") + "```\nhttps://github.com/DiscordBotsFTW/AwesomeBot/wiki/Commands#" + cmd;
     }
     if(pmcommands[cmd] && cmd!="remindme") {
-        info += (filled ? "\n\n" : "") + "**Help for private command `" + cmd + "`:**```" + cmd + (pmcommands[cmd].usage ? (" " + pmcommands[cmd].usage) : "") + "```\nhttps://github.com/BitQuote/AwesomeBot/wiki/Commands#" + cmd + "-pm";
+        info += (filled ? "\n\n" : "") + "**Help for private command `" + cmd + "`:**```" + cmd + (pmcommands[cmd].usage ? (" " + pmcommands[cmd].usage) : "") + "```\nhttps://github.com/DiscordBotsFTW/AwesomeBot/wiki/Commands#" + cmd + "-pm";
         filled = true;
     }
     for(var ext in configs.servers[svr.id].extensions) {
